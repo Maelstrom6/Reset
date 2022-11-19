@@ -1,0 +1,42 @@
+# First install the nvidia drivers
+# This can be done in the "Software & Updates" app under Additional Drivers
+# Select a non-open source one
+# Alternatively, you can use the command line
+ubuntu-drivers devices
+# Need to reboot before continuing
+sudo reboot
+# Test installation
+nvidia-smi  # Should show your graphics card
+
+# toolkit 11.2
+# https://developer.nvidia.com/cuda-11.2.2-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=2004&target_type=runfilelocal
+wget https://developer.download.nvidia.com/compute/cuda/11.2.2/local_installers/cuda_11.2.2_460.32.03_linux.run
+sudo sh cuda_11.2.2_460.32.03_linux.run --toolkit --silent --override
+# Test installation
+nvcc -V  # Should show the version of cuda toolkit
+
+# Add some environment variables
+sudo nano ~/.profile
+# Add the following
+#export PATH=/usr/local/cuda-11.2/bin${PATH:+:${PATH}}
+#export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+#export CUDA_HOME=/usr/local/cuda
+
+# CuDNN
+# Download archive
+# https://developer.nvidia.com/rdp/cudnn-archive
+tar -zvxf cudnn-11.2-linux-x64-v8.1.0.77.tgz
+
+# Copy the cuda folder to wherever you want it.
+cd xxx/cuda/include
+sudo cp *.h /usr/local/cuda/include/
+# replace xxx with your own path
+sudo chmod a+r /usr/local/cuda/include/cudnn.h
+
+sudo nano ~/.profile
+# Add the following
+#export LD_LIBRARY_PATH=xxx/cuda/lib64:$LD_LIBRARY_PATH
+
+# Need to log out and log back in for the profile to refresh
+
+# Now install tensorflow with pip
