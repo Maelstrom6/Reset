@@ -10,6 +10,3 @@ tar -xvzf julia-1.7.2-linux-x86_64.tar.gz
 # https://askubuntu.com/questions/1304249/why-does-my-symlink-to-usr-local-bin-not-work
 sudo cp -r julia-1.7.2 /opt/
 sudo ln -s /opt/julia-1.7.2/bin/julia /usr/local/bin/julia
-
-# julia
-sudo julia update_julia.jl
