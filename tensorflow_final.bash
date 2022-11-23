@@ -40,3 +40,8 @@ sudo nano ~/.profile
 # Need to log out and log back in for the profile to refresh
 
 # Now install tensorflow with pip
+# pip install tensorflow
+
+# Install torch
+# pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio===0.11.0+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+# pip install accelerate
