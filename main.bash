@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Current working directory should be the location of this file
+
 # Install various apps
 sudo apt update
 sudo apt upgrade
@@ -33,7 +35,19 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
 # Light mode
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+# gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
 
 # Set the hostname
 # sudo hostnamectl set-hostname tardis
+
+# Change icons for folders
+# https://forums.linuxmint.com/viewtopic.php?t=352261
+# gio set Folder -t string metadata::custom-icon file:///home/chris/Documents/icons/icons8-python-96.png
+
+# Add the main folders in Documents
+mkdir ~/Documents/PythonProjects/
+mkdir ~/Documents/JuliaProjects/
+mkdir ~/Documents/RustProjects/
+
+cp -r icons/ ~/Templates/icons/
+
