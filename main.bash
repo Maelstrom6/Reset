@@ -49,5 +49,8 @@ mkdir ~/Documents/PythonProjects/
 mkdir ~/Documents/JuliaProjects/
 mkdir ~/Documents/RustProjects/
 
-cp -r icons/ ~/Pictures/icons/
+cp -r icons/ ~/Pictures/
 
+gio set ~/Documents/PythonProjects/ -t string metadata::custom-icon file:///home/chris/Pictures/icons/python.png
+gio set ~/Documents/JuliaProjects/ -t string metadata::custom-icon file:///home/chris/Pictures/icons/julia.png
+gio set ~/Documents/RustProjects/ -t string metadata::custom-icon file:///home/chris/Pictures/icons/rust_inverted.png
