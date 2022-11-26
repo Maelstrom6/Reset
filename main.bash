@@ -3,8 +3,8 @@
 # Current working directory should be the location of this file
 
 # Install various apps
-sudo apt update
-sudo apt upgrade
+sudo apt update -y
+sudo apt upgrade -y
 
 # cd ~/Downloads || exit
 
@@ -14,8 +14,8 @@ sudo bash vs_code.bash
 sudo bash julia.bash
 sudo bash python.bash
 
-# Install vs code extensions
-sudo bash extensions.bash
+# Install vs code extensions 
+bash extensions.bash
 
 # julia
 sudo julia update_julia.jl
@@ -49,5 +49,5 @@ mkdir ~/Documents/PythonProjects/
 mkdir ~/Documents/JuliaProjects/
 mkdir ~/Documents/RustProjects/
 
-cp -r icons/ ~/Templates/icons/
+cp -r icons/ ~/Pictures/icons/
 
