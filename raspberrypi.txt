@@ -3,4 +3,3 @@ Connecting to rpi:
 Use Remmina on Ubuntu or Remote Desktop for windows
 ip: 192.168.3.20 or 192.168.3.24
 user: pi
-password: s
