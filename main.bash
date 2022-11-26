@@ -54,3 +54,14 @@ cp -r icons/ ~/Pictures/
 gio set ~/Documents/PythonProjects/ -t string metadata::custom-icon file:///home/chris/Pictures/icons/python.png
 gio set ~/Documents/JuliaProjects/ -t string metadata::custom-icon file:///home/chris/Pictures/icons/julia.png
 gio set ~/Documents/RustProjects/ -t string metadata::custom-icon file:///home/chris/Pictures/icons/rust_inverted.png
+
+# Set nautilus settings
+gsettings get org.gnome.nautilus.preferences show-hidden-files
+gsettings get org.gtk.Settings.FileChooser show-hidden
+gsettings get org.gnome.nautilus.preferences default-folder-viewer
+gsettings get org.gtk.Settings.FileChooser sort-directories-first
+
+gsettings set org.gnome.nautilus.preferences show-hidden-files true
+gsettings set org.gtk.Settings.FileChooser show-hidden true
+gsettings set org.gnome.nautilus.preferences default-folder-viewer "list-view"
+gsettings set org.gtk.Settings.FileChooser sort-directories-first true

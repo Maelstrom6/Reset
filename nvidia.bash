@@ -50,7 +50,10 @@ sudo nano ~/.profile
 
 # Install torch
 # pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio===0.11.0+cu113 -f https://download.pytorch.org/whl/torch_stable.html
-# pip install accelerate
+# pip install git+https://github.com/huggingface/diffusers.git transformers accelerate scipy
+# pip install xformers
+# pip install ftfy
+# Will automatically download the model weights when running the script
 
 # import torch
 # print(torch.cuda.get_device_name(0))
