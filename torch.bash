@@ -10,25 +10,30 @@ sudo reboot
 # Test installation
 nvidia-smi  # Should show your graphics card
 
-# toolkit 11.2
+# toolkit 11.7
 # https://developer.nvidia.com/cuda-toolkit-archive
-# https://developer.nvidia.com/cuda-11.2.2-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=2004&target_type=runfilelocal
-wget https://developer.download.nvidia.com/compute/cuda/11.2.2/local_installers/cuda_11.2.2_460.32.03_linux.run
-sudo sh cuda_11.2.2_460.32.03_linux.run --toolkit --silent --override
+# https://developer.nvidia.com/cuda-11-7-1-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=runfile_local
+wget https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_515.65.01_linux.run
+sudo sh cuda_11.7.1_515.65.01_linux.run --toolkit --silent --override
+
 # Test installation
 nvcc -V  # Should show the version of cuda toolkit
 
 # Add some environment variables
 sudo nano ~/.profile
 # Add the following
-#export PATH=/usr/local/cuda-11.2/bin${PATH:+:${PATH}}
-#export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+#export PATH=/usr/local/cuda-11.7/bin${PATH:+:${PATH}}
+#export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 #export CUDA_HOME=/usr/local/cuda
+
 
 # CuDNN
 # Download archive
 # https://developer.nvidia.com/rdp/cudnn-archive
-tar -zvxf cudnn-11.2-linux-x64-v8.1.0.77.tgz
+# Ubuntu installer if possible (22.04)
+#tar -zvxf cudnn-11.2-linux-x64-v8.1.0.77.tgz
+# sudo dpkg -r <old-cudnn-runtime>.deb
+sudo dpkg -i cudnn-local-repo-ubuntu2204-8.6.0.163_1.0-1_amd64.deb
 
 # Copy the cuda folder to wherever you want it.
 mv cuda/ ~/cuda/
@@ -41,21 +46,19 @@ sudo nano ~/.profile
 # Add the following
 #export LD_LIBRARY_PATH=~/cuda/lib64:$LD_LIBRARY_PATH
 
-# Need to log out and log back in for the profile to refresh
-
-# Now install tensorflow with pip
-# pip install tensorflow
-
-# import tensorflow as tf
-# print(tf.config.list_physical_devices('GPU'))
 
 # Install torch
 # https://download.pytorch.org/whl/torch_stable.html
-# pip install torch.bash==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio===0.11.0+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+# pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 torchaudio===0.13.0+cu117 -f https://download.pytorch.org/whl/torch_stable.html
 # pip install git+https://github.com/huggingface/diffusers.git transformers accelerate scipy
-# pip install xformers
 # pip install ftfy
+# https://github.com/facebookresearch/xformers/issues/473
+# takes a really long time
+# pip install ninja
+# pip install git+https://github.com/facebookresearch/xformers.git@v0.0.13#egg=xformers
+# pip install -U --pre triton
 # Will automatically download the model weights when running the script
 
 # import torch.bash
 # print(torch.bash.cuda.get_device_name(0))
+
