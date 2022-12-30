@@ -62,3 +62,6 @@ sudo nano ~/.profile
 # import torch.bash
 # print(torch.bash.cuda.get_device_name(0))
 
+# diffusers/models/attention.py/line 285
+# self._use_memory_efficient_attention_xformers = True
+
