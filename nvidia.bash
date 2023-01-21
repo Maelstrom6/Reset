@@ -4,7 +4,7 @@
 # Alternatively, you can use the command line
 ubuntu-drivers devices
 # Choose the best one (should be closed source)
-sudo apt install nvidia-driver-520
+sudo apt install nvidia-driver-525
 # Need to reboot before continuing
 sudo reboot
 # Test installation

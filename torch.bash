@@ -1,3 +1,5 @@
+# If any step fails, restart PC and run the command again
+
 # First install the nvidia drivers
 # This can be done in the "Software & Updates" app under Additional Drivers
 # Select a non-open source one
@@ -28,6 +30,7 @@ sudo nano ~/.profile
 
 
 # CuDNN
+# Now you need to open the link below and manually download a version
 # Download archive
 # https://developer.nvidia.com/rdp/cudnn-archive
 # Ubuntu installer if possible (22.04)
@@ -59,8 +62,8 @@ sudo nano ~/.profile
 # pip install -U --pre triton
 # Will automatically download the model weights when running the script
 
-# import torch.bash
-# print(torch.bash.cuda.get_device_name(0))
+# import torch
+# print(torch.cuda.get_device_name(0))
 
 # diffusers/models/attention.py/line 285
 # self._use_memory_efficient_attention_xformers = True

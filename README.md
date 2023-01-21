@@ -18,3 +18,13 @@ bash main.bash
 # Then install the nvidia drivers
 bash nvidia.bash
 ```
+
+To do once done:
+- Change display scaling
+- Change mouse sensitivity
+- Change sleep time
+- Chrome smooth scrolling: https://askubuntu.com/questions/1350914/smooth-scroll-for-chrome
+  - Type `brave://flags/` in the search bar
+  - Search for "Smooth Scrolling" and Enable it
+
+
