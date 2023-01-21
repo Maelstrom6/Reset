@@ -16,6 +16,7 @@ sudo bash python.bash
 
 # Install vs code extensions 
 bash extensions.bash
+python3 vs_code_theme.py
 
 # julia
 sudo julia update_julia.jl
