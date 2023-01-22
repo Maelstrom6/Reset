@@ -1,3 +1,3 @@
-sudo apt-get install virtualbox
-sudo apt-get install virtualbox-ext-pack
-virtualbox
+sudo apt-get install -y virtualbox
+sudo apt-get install -y virtualbox-ext-pack
+# virtualbox
