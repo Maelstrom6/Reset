@@ -30,7 +30,7 @@ cp -r icons/ ~/Pictures/
 cp -r wallpapers/ ~/Pictures/
 
 
-distro="ubuntu"
+distro="kubuntu"
 
 if [ $distro = "ubuntu" ]
 then
