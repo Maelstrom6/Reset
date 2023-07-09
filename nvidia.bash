@@ -71,3 +71,7 @@ sudo nano ~/.profile
 
 # import torch.bash
 # print(torch.bash.cuda.get_device_name(0))
+
+# Zip a file
+# zip --encrypt zip_file.zip -r folder_name
+# zip --encrypt zip_file.zip file_name.xyz
