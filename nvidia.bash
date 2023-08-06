@@ -75,3 +75,10 @@ sudo nano ~/.profile
 # Zip a file
 # zip --encrypt zip_file.zip -r folder_name
 # zip --encrypt zip_file.zip file_name.xyz
+
+
+
+# Weird error messages
+# Target CNF (main/cnf/Commands-all) is configured multiple times in /etc/apt/sources.list.d/google-cloud-sdk.list:1 and /etc/apt/sources.list.d/google-cloud-sdk.list:3
+# sudo nano /etc/apt/sources.list.d/google-cloud-sdk.list
+# Comment out the duplicate lines
